@@ -1,0 +1,9 @@
+let add = \j -> intadd (fst j) (snd j)
+let step =
+   \f -> \x ->
+     if0 x then 1 else
+       let x1 = add (x, -1) in
+       if0 x1 then 1 else
+         let x2 = add (x1, -1) in
+         intadd (f x1) (f x2)
+let main = print (fix step 38)
